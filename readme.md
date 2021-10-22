@@ -1,8 +1,8 @@
 # ink-control-components
 
-> Box list component for [Ink](https://github.com/vadimdemedes/ink).
+> Control components for [Ink](https://github.com/vadimdemedes/ink).
 
-Ink JSX common operations components.  Sharing in case it's useful to anyone else.
+Common decision operations through JSX for Ink.
 
 ## Install
 
@@ -67,7 +67,7 @@ import {GateExists} from "ink-control-components";
 const Example = () => (
   <GateExists path={`/etc/hosts`} gateFalse={<Text>hosts missing</Text>}>
     <Text>It exists, do something</Text>
-  </GateBoolean>
+  </GateExists>
 );
 
 render(<Example />);

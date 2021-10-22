@@ -1,11 +1,11 @@
 {
   "name": "@elricb/ink-control-components",
   "version": "0.0.1",
-  "description": "Text input component for Ink",
+  "description": "Decision components for Ink",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/elricb/ink-box-list.git"
+    "url": "git+https://github.com/elricb/ink-control-components.git"
   },
   "author": "elricb (github.com/elricb)",
   "main": "lib",
@@ -76,9 +76,9 @@
     ]
   },
   "bugs": {
-    "url": "https://github.com/elricb/ink-box-list/issues"
+    "url": "https://github.com/elricb/ink-control-components/issues"
   },
-  "homepage": "https://github.com/elricb/ink-box-list#readme",
+  "homepage": "https://github.com/elricb/ink-control-components#readme",
   "directories": {
     "lib": "lib",
     "test": "test"
