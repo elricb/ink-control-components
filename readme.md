@@ -121,3 +121,43 @@ Type: `string`
 
 Yes/No question.
 
+
+### `<GateFunction>`
+
+Expose or block child component based on function results.
+
+```jsx
+import {render, Text} from "ink";
+import {GateFunction} from "ink-control-components";
+
+const Example = () => (
+  <GateFunction
+    func={(a1) => a1 ? true : false}
+    args={[true]}
+    gateFalse={<Text>GateFunction false</Text>}
+  >
+    <Text>GateFunction true</Text>
+  </GateFunction>
+);
+
+render(<Example />);
+```
+
+#### gateFalse
+
+Type: `element`
+
+Alternate component to display if condition is false.
+
+#### func
+
+Type: `function`
+
+Function that returns boolean.
+
+#### args
+
+Type: `array`
+
+Args sent to function.
+

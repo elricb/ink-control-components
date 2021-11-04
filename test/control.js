@@ -4,9 +4,15 @@ import React from "react";
 import PropTypes from "prop-types";
 import {render} from "ink-testing-library";
 
-import {GateBoolean, GateExists, GateYesNo, InputYesNo} from "../lib";
+import {
+  GateBoolean,
+  GateExists,
+  GateYesNo,
+  InputYesNo,
+  GateFunction
+} from "../lib";
 
-test("component GateBoolean - test 1 - truthy", t => {
+test("component GateBoolean - truthy", t => {
   const {lastFrame} = render(
     <GateBoolean condition={true}>
       <Text>True Result</Text>
@@ -16,7 +22,7 @@ test("component GateBoolean - test 1 - truthy", t => {
   t.is(lastFrame(), "True Result");
 });
 
-test("component GateBoolean - test 2 - falsey", t => {
+test("component GateBoolean - falsey", t => {
   const {lastFrame} = render(
     <GateBoolean condition={false} gateFalse={<Text>False Result</Text>}>
       <Text>True Result</Text>
@@ -26,7 +32,7 @@ test("component GateBoolean - test 2 - falsey", t => {
   t.is(lastFrame(), "False Result");
 });
 
-test("component GateExists - test 1 - truthy", t => {
+test("component GateExists - truthy", t => {
   const {lastFrame} = render(
     <GateExists path={`${__dirname}/testfile.txt`}>
       <Text>True Result</Text>
@@ -36,7 +42,7 @@ test("component GateExists - test 1 - truthy", t => {
   t.is(lastFrame(), "True Result");
 });
 
-test("component GateExists - test 2 - falsey", t => {
+test("component GateExists - falsey", t => {
   const {lastFrame} = render(
     <GateExists
       path={`${__dirname}/testfile-false.txt`}
@@ -48,3 +54,26 @@ test("component GateExists - test 2 - falsey", t => {
 
   t.is(lastFrame(), "False Result");
 });
+
+test("component GateFunction - truthy", t => {
+  const {lastFrame} = render(
+    <GateFunction func={() => true}>
+      <Text>True Result</Text>
+    </GateFunction>
+  );
+
+  // ink-testing-library doesn't handle async results
+  // t.is(lastFrame(), "True Result");
+  t.is(lastFrame(), "");
+});
+
+test("component GateFunction - falsey", t => {
+  const {lastFrame} = render(
+    <GateFunction func={() => false} gateFalse={<Text>False Result</Text>}>
+      <Text>True Result</Text>
+    </GateFunction>
+  );
+
+  t.is(lastFrame(), "False Result");
+});
+

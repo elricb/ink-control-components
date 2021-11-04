@@ -4,6 +4,7 @@ module.exports.GateYesNo = require("./component/GateYesNo");
 module.exports.GateExists = require("./component/GateExists");
 module.exports.InputYesNo = require("./component/InputYesNo");
 module.exports.GateBoolean = require("./component/GateBoolean");
+module.exports.GateFunction = require("./component/GateFunction");
 
 module.exports.inkExec = require("./function/inkExec");
 module.exports.inkSpawn = require("./function/inkSpawn");
