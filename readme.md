@@ -16,6 +16,7 @@ $ npm install --save-dev @elricb/ink-control-components
   - [`<GateBoolean>`](#gateboolean)
   - [`<GateExists>`](#gateexists)
   - [`<GateYesNo>`](#gateyesno)
+  - [`<GateFunction>`](#gatefunction)
 
 ## Components
 

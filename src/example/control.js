@@ -17,6 +17,18 @@ const Example1 = () => (
         <Text>True Result</Text>
       </GateFunction>
     </Box>
+    <Box flexDirection="column" marginBottom={1}>
+      <Text bold>component GateFunction - args truthy</Text>
+      <GateFunction
+        func={bool => {
+          return bool ? true : false;
+        }}
+        args={[true]}
+        gateFalse={<Text>False Result</Text>}
+      >
+        <Text>True Result</Text>
+      </GateFunction>
+    </Box>
   </Box>
 );
 
