@@ -5,7 +5,7 @@ const GateFunction = ({func, children, args = [], gateFalse = null}) => {
   const [result, setResult] = React.useState(null);
 
   React.useEffect(() => {
-    setResult(func.apply(args));
+    setResult(func.apply(null, args));
   }, [func, args]);
 
   if (result === null) {
