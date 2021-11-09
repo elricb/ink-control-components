@@ -1,7 +1,7 @@
 const React = require("react");
 const {Text, Box} = require("ink");
 const PropTypes = require("prop-types");
-const TextInput = require("ink-text-input");
+const TextInput = require("ink-text-input").default || require("ink-text-input");
 
 const getIsYN = input => {
   if (typeof input === "string") {
