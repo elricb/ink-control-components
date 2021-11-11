@@ -15,7 +15,7 @@
   "scripts": {
     "build": "babel src/ -d lib/",
     "release": "npm run build && npm run lint && npm test && npm publish",
-    "example": "node lib/example/control.js",
+    "example": "node lib/example/control.js && node lib/example/http.js",
     "lint": "xo",
     "test": "ava",
     "test-update-snapshots": "ava --update-snapshots"
