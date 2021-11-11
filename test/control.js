@@ -1,7 +1,6 @@
 import test from "ava";
 import {Text} from "ink";
 import React from "react";
-import PropTypes from "prop-types";
 import {render} from "ink-testing-library";
 
 import {
@@ -76,4 +75,3 @@ test("component GateFunction - falsey", t => {
 
   t.is(lastFrame(), "False Result");
 });
-

@@ -7,8 +7,10 @@ module.exports = function (message, props) {
     path: "",
     ...props
   };
-  for (let key in defaultProps) {
-    error[key] = defaultProps[key];
+
+  for (const [key, value] of Object.entries(defaultProps)) {
+    error[key] = value;
   }
+
   return error;
 };

@@ -6,6 +6,6 @@ module.exports.InputYesNo = require("./component/InputYesNo");
 module.exports.GateBoolean = require("./component/GateBoolean");
 module.exports.GateFunction = require("./component/GateFunction");
 
-module.exports.inkExec = require("./function/inkExec");
-module.exports.inkSpawn = require("./function/inkSpawn");
-module.exports.childProcessError = require("./function/childProcessError");
+module.exports.inkExec = require("./function/ink-exec");
+module.exports.inkSpawn = require("./function/ink-spawn");
+module.exports.childProcessError = require("./function/child-process-error");

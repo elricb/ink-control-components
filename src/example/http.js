@@ -5,17 +5,19 @@ const GateHttp = require("../component/GateHttp");
 
 const Example1 = () => {
   const [response, setResponse] = React.useState({});
-  const {write: writeErr} = useStderr();
+  const {write: writeError} = useStderr();
   const {write: writeOut} = useStdout();
 
   return (
     <Box flexDirection="column" marginTop={1} marginBottom={1}>
       <Box flexDirection="column">
-        <Text bold color="green">component GateHttp - truthy</Text>
+        <Text bold color="green">
+          component GateHttp - truthy
+        </Text>
         <GateHttp
           options={{hostname: "npmjs.com", port: 443, path: "/", method: "GET"}}
           onData={data => writeOut(data)}
-          onError={data => writeErr(data)}
+          onError={data => writeError(data)}
           onDone={data => setResponse(data)}
           gateFalse={<Text>False Result</Text>}
         >

@@ -16,5 +16,3 @@ module.exports = function ({
   cp.on("close", code => onDone(code));
   cp.on("error", err => onError(err));
 };
-
-

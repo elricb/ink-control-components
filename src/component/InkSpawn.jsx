@@ -2,7 +2,7 @@ const React = require("react");
 const PropTypes = require("prop-types");
 const {useStdout, useStderr} = require("ink");
 
-const inkSpawn = require("../function/inkSpawn");
+const inkSpawn = require("../function/ink-spawn");
 
 /// spawn shell command; pipe to ink-safe std streams
 const InkSpawn = props => {

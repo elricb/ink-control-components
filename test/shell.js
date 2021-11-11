@@ -1,14 +1,13 @@
 import test from "ava";
 import {Text} from "ink";
 import React from "react";
-import PropTypes from "prop-types";
 import {render} from "ink-testing-library";
 
 import {InkSpawn, InkExec} from "../lib";
 
 /*
- * ink-testing-library doesn't see async responses
- * see example for more accurate display results
+ * Component ink-testing-library doesn't see async responses
+ * See example for more accurate display results
  */
 
 test("component InkSpawn - test 1 echo", t => {
@@ -16,8 +15,8 @@ test("component InkSpawn - test 1 echo", t => {
     <InkSpawn
       command="echo"
       args={["Test"]}
-      onDone={code => <Text>{`Done`}</Text>}
-      onError={err => <Text>{`${err}`}</Text>}
+      onDone={() => <Text>Done</Text>}
+      onError={error => <Text>{`${error}`}</Text>}
     />
   );
   t.is(results.lastFrame(), "");

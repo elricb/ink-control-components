@@ -1,6 +1,6 @@
 const {exec} = require("child_process");
 
-const childProcessError = require("./childProcessError");
+const childProcessError = require("./child-process-error");
 
 /// exec shell command
 module.exports = function ({
@@ -32,5 +32,3 @@ module.exports = function ({
   });
   cp.on("error", err => onError(err));
 };
-
-

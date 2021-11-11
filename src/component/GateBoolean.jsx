@@ -12,7 +12,7 @@ const GateBoolean = ({
 GateBoolean.propTypes = {
   children: PropTypes.any.isRequired,
   condition: PropTypes.bool.isRequired,
-  gateNull: PropTypes.any,  // I think these are the valid types: element, array, array of node, node, string 
+  gateNull: PropTypes.any, // I think these are the valid types: element, array, array of node, node, string
   gateFalse: PropTypes.any
 };
 

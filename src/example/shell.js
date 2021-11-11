@@ -12,7 +12,9 @@ const Example1 = () => (
         command="echo"
         args={["InkSpawn stdout text"]}
         onDone={code => <Text color="green">{`Done (${code})`}</Text>}
-        onError={err => <Text color="red">{`${err} (${JSON.stringify(err)})`}</Text>}
+        onError={error => (
+          <Text color="red">{`${error} (${JSON.stringify(error)})`}</Text>
+        )}
       />
     </Box>
     <Box flexDirection="column" marginBottom={1}>
@@ -20,7 +22,9 @@ const Example1 = () => (
       <InkSpawn
         command="InkSpawn-error"
         onDone={code => <Text color="green">{`Done (${code})`}</Text>}
-        onError={err => <Text color="red">{`${err} (${JSON.stringify(err)})`}</Text>}
+        onError={error => (
+          <Text color="red">{`${error} (${JSON.stringify(error)})`}</Text>
+        )}
       />
     </Box>
     <Box flexDirection="column" marginBottom={1}>
@@ -28,7 +32,9 @@ const Example1 = () => (
       <InkExec
         command="echo 'InkExec stdout text'"
         onDone={code => <Text color="green">{`Done (${code})`}</Text>}
-        onError={err => <Text color="red">{`${err} (${JSON.stringify(err)})`}</Text>}
+        onError={error => (
+          <Text color="red">{`${error} (${JSON.stringify(error)})`}</Text>
+        )}
       />
     </Box>
     <Box flexDirection="column" marginBottom={1}>
@@ -36,7 +42,9 @@ const Example1 = () => (
       <InkExec
         command="InkExec-error"
         onDone={code => <Text color="green">{`Done (${code})`}</Text>}
-        onError={err => <Text color="red">{`${err} (${JSON.stringify(err)})`}</Text>}
+        onError={error => (
+          <Text color="red">{`${error} (${JSON.stringify(error)})`}</Text>
+        )}
       />
     </Box>
   </Box>
