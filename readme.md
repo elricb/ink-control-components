@@ -4,6 +4,10 @@
 
 Common decision operations through JSX for Ink.
 
+## Requirements
+
+* [node](https://nodejs.org/en/download/) - recommended lts version >= 12
+
 ## Install
 
 ```

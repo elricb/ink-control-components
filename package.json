@@ -80,7 +80,7 @@
     "xo": "^0.47.0"
   },
   "peerDependencies": {
-    "ink": ">=2",
+    "ink": ">=3",
     "prop-types": ">=14",
     "react": ">=16"
   },
