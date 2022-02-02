@@ -5,6 +5,7 @@ import GateYesNo from "./component/gate-yes-no.jsx";
 import GateExists from "./component/gate-exists.jsx";
 import InputYesNo from "./component/input-yes-no.jsx";
 import GateBoolean from "./component/gate-boolean.jsx";
+import InkFunction from "./component/ink-function.jsx";
 import GateFunction from "./component/gate-function.jsx";
 import GateExec from "./component/gate-exec.jsx";
 import inkExec from "./function/ink-exec.js";
@@ -19,6 +20,7 @@ export {
   GateExists,
   InputYesNo,
   GateBoolean,
+  InkFunction,
   GateFunction,
   GateExec,
   inkExec,
