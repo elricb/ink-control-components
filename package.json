@@ -16,7 +16,7 @@
   "scripts": {
     "build": "rollup -c && npx babel src/example --out-dir dist/example",
     "start": "rollup -c -w",
-    "release": "npm run build && npm run lint && npm test && npm publish --scope=public",
+    "release": "npm run build && npm run lint && npm test && npm publish --access public",
     "example": "node dist/example/control.js && node dist/example/http.js",
     "lint": "xo",
     "test": "ava",
