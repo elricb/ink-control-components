@@ -15,7 +15,7 @@ const GateFunction = ({func, children, args = [], gateFalse = null}) => {
     return null;
   }
 
-  return result ? children : gateFalse;
+  return result ? children || null : gateFalse;
 };
 
 GateFunction.propTypes = {
