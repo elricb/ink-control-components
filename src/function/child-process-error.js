@@ -1,4 +1,4 @@
-module.exports = function (message, props) {
+const childProcessError = function (message, props) {
   const error = new Error(message);
   const defaultProps = {
     errno: 0,
@@ -14,3 +14,5 @@ module.exports = function (message, props) {
 
   return error;
 };
+
+export default childProcessError;

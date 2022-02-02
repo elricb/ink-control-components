@@ -1,15 +1,10 @@
+import path from "path";
 import test from "ava";
 import {Text} from "ink";
 import React from "react";
 import {render} from "ink-testing-library";
 
-import {
-  GateBoolean,
-  GateExists,
-  GateYesNo,
-  InputYesNo,
-  GateFunction
-} from "../lib";
+import {GateBoolean, GateExists, GateFunction} from "../dist";
 
 test("component GateBoolean - truthy", t => {
   const {lastFrame} = render(
@@ -33,7 +28,7 @@ test("component GateBoolean - falsey", t => {
 
 test("component GateExists - truthy", t => {
   const {lastFrame} = render(
-    <GateExists path={`${__dirname}/testfile.txt`}>
+    <GateExists path={path.join(__dirname, "testfile.txt")}>
       <Text>True Result</Text>
     </GateExists>
   );
@@ -44,7 +39,7 @@ test("component GateExists - truthy", t => {
 test("component GateExists - falsey", t => {
   const {lastFrame} = render(
     <GateExists
-      path={`${__dirname}/testfile-false.txt`}
+      path={path.join(__dirname, "testfile-false.txt")}
       gateFalse={<Text>False Result</Text>}
     >
       <Text>True Result</Text>
@@ -61,8 +56,8 @@ test("component GateFunction - truthy", t => {
     </GateFunction>
   );
 
-  // ink-testing-library doesn't handle async results
-  // t.is(lastFrame(), "True Result");
+  // Library ink-testing-library doesn't handle async results
+  // Test t.is(lastFrame(), "True Result");
   t.is(lastFrame(), "");
 });
 

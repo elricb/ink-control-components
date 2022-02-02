@@ -1,5 +1,4 @@
-const React = require("react");
-const PropTypes = require("prop-types");
+import PropTypes from "prop-types";
 
 const GateBoolean = ({
   children,
@@ -12,8 +11,9 @@ const GateBoolean = ({
 GateBoolean.propTypes = {
   children: PropTypes.any.isRequired,
   condition: PropTypes.bool.isRequired,
-  gateNull: PropTypes.any, // I think these are the valid types: element, array, array of node, node, string
+  // I think these are the valid types: element, array, array of node, node, string
+  gateNull: PropTypes.any,
   gateFalse: PropTypes.any
 };
 
-module.exports = GateBoolean;
+export default GateBoolean;

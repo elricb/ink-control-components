@@ -1,9 +1,9 @@
-const {exec} = require("child_process");
+import process from "process";
+import {exec} from "child_process";
+import childProcessError from "./child-process-error.js";
 
-const childProcessError = require("./child-process-error");
-
-/// exec shell command
-module.exports = function ({
+/// Exec shell command
+const inkExec = function ({
   command,
   options = {},
   onDone = () => {},
@@ -15,7 +15,7 @@ module.exports = function ({
   const cp = exec(command, options);
   cp.stdout.on("data", data => writeOut(data));
   cp.stderr.on("data", data => {
-    errors += data + "";
+    errors += String(data);
     writeErr(data);
   });
   cp.on("close", code => {
@@ -28,7 +28,10 @@ module.exports = function ({
         })
       );
     }
+
     onDone(code);
   });
-  cp.on("error", err => onError(err));
+  cp.on("error", error => onError(error));
 };
+
+export default inkExec;

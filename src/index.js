@@ -1,12 +1,27 @@
-module.exports.InkExec = require("./component/InkExec");
-module.exports.InkSpawn = require("./component/InkSpawn");
-module.exports.GateHttp = require("./component/GateHttp");
-module.exports.GateYesNo = require("./component/GateYesNo");
-module.exports.GateExists = require("./component/GateExists");
-module.exports.InputYesNo = require("./component/InputYesNo");
-module.exports.GateBoolean = require("./component/GateBoolean");
-module.exports.GateFunction = require("./component/GateFunction");
+import InkExec from "./component/ink-exec.jsx";
+import InkSpawn from "./component/ink-spawn.jsx";
+import GateHttp from "./component/gate-http.jsx";
+import GateYesNo from "./component/gate-yes-no.jsx";
+import GateExists from "./component/gate-exists.jsx";
+import InputYesNo from "./component/input-yes-no.jsx";
+import GateBoolean from "./component/gate-boolean.jsx";
+import GateFunction from "./component/gate-function.jsx";
+import GateExec from "./component/gate-exec.jsx";
+import inkExec from "./function/ink-exec.js";
+import inkSpawn from "./function/ink-spawn.js";
+import childProcessError from "./function/child-process-error.js";
 
-module.exports.inkExec = require("./function/ink-exec");
-module.exports.inkSpawn = require("./function/ink-spawn");
-module.exports.childProcessError = require("./function/child-process-error");
+export {
+  InkExec,
+  InkSpawn,
+  GateHttp,
+  GateYesNo,
+  GateExists,
+  InputYesNo,
+  GateBoolean,
+  GateFunction,
+  GateExec,
+  inkExec,
+  inkSpawn,
+  childProcessError
+};

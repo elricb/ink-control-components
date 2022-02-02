@@ -1,8 +1,7 @@
 const React = require("react");
 const {render, Box, Text} = require("ink");
 
-const InkExec = require("../component/InkExec");
-const InkSpawn = require("../component/InkSpawn");
+const {InkExec, InkSpawn} = require("../cjs");
 
 const Example1 = () => (
   <Box flexDirection="column" marginTop={1}>

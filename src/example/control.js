@@ -1,7 +1,7 @@
 const React = require("react");
 const {render, Box, Text} = require("ink");
 
-const GateFunction = require("../component/GateFunction");
+const {GateFunction} = require("../cjs");
 
 const Example1 = () => (
   <Box flexDirection="column" marginTop={1}>

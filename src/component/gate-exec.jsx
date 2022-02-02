@@ -1,8 +1,7 @@
-const React = require("react");
-const PropTypes = require("prop-types");
-const {useStdout, useStderr} = require("ink");
-
-const inkExec = require("../function/ink-exec");
+import React from "react";
+import PropTypes from "prop-types";
+import {useStdout, useStderr} from "ink";
+import inkExec from "../function/ink-exec";
 
 /// exec shell command; pipe to ink-safe std streams
 const GateExec = ({
@@ -13,6 +12,7 @@ const GateExec = ({
   gateNull = null,
   gateFalse = null,
   command,
+  children,
   options = {}
 }) => {
   const [result, setResult] = React.useState(null);
@@ -20,6 +20,11 @@ const GateExec = ({
   const {write: writeStdOut} = useStdout();
 
   React.useEffect(() => {
+    // Run once regardless of changed props
+    if (result !== null) {
+      return;
+    }
+
     inkExec({
       writeErr: writeErr || writeStdErr,
       writeOut: writeOut || writeStdOut,
@@ -66,4 +71,4 @@ GateExec.propTypes = {
   gateFalse: PropTypes.any
 };
 
-module.exports = GateExec;
+export default GateExec;

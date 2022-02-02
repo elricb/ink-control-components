@@ -1,7 +1,7 @@
-const http = require("http");
-const https = require("https");
-const React = require("react");
-const PropTypes = require("prop-types");
+import http from "http";
+import https from "https";
+import React from "react";
+import PropTypes from "prop-types";
 
 const GateHttp = ({
   options,
@@ -76,7 +76,9 @@ const GateHttp = ({
           });
         }
 
-        setResolve(true);
+        if (resolve !== true) {
+          setResolve(true);
+        }
       });
     });
 
@@ -85,9 +87,12 @@ const GateHttp = ({
         onError(error);
       }
 
-      setResolve(false);
+      if (resolve !== false) {
+        setResolve(false);
+      }
     });
 
+    // Send data with request
     if (data) {
       request.write(data);
     }
@@ -109,4 +114,4 @@ GateHttp.propTypes = {
   onError: PropTypes.func
 };
 
-module.exports = GateHttp;
+export default GateHttp;

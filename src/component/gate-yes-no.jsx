@@ -1,22 +1,23 @@
-const React = require("react");
-const PropTypes = require("prop-types");
-
-const InputYesNo = require("./InputYesNo");
+import React from "react";
+import PropTypes from "prop-types";
+import InputYesNo from "./input-yes-no.jsx";
 
 const GateYesNo = ({text, children, gateFalse = null, callback = () => {}}) => {
   const [answer, setAnswer] = React.useState(null);
 
   return (
-    <React.Fragment>
+    <>
       <InputYesNo
         text={text}
         callback={b => {
-          setAnswer(b);
-          callback(b);
+          if (b !== answer) {
+            setAnswer(b);
+            callback(b);
+          }
         }}
       />
       {answer === null ? null : answer === true ? children : gateFalse}
-    </React.Fragment>
+    </>
   );
 };
 
@@ -27,4 +28,4 @@ GateYesNo.propTypes = {
   text: PropTypes.string.isRequired
 };
 
-module.exports = GateYesNo;
+export default GateYesNo;

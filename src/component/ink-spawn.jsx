@@ -1,23 +1,22 @@
-const React = require("react");
-const PropTypes = require("prop-types");
-const {useStdout, useStderr} = require("ink");
+import React from "react";
+import PropTypes from "prop-types";
+import {useStdout, useStderr} from "ink";
+import inkSpawn from "../function/ink-spawn.js";
 
-const inkExec = require("../function/inkExec");
-
-/// exec shell command; pipe to ink-safe std streams
-const InkExec = props => {
+/// spawn shell command; pipe to ink-safe std streams
+const InkSpawn = props => {
   const [done, setDone] = React.useState(false);
   const [error, setError] = React.useState(false);
   const {write: writeErr} = useStderr();
   const {write: writeOut} = useStdout();
 
   React.useEffect(() => {
-    inkExec({
+    inkSpawn({
       writeErr,
       writeOut,
       ...props,
       onDone: code => setDone(code),
-      onError: err => setError(err)
+      onError: error => setError(error)
     });
   }, []);
 
@@ -28,9 +27,11 @@ const InkExec = props => {
     : null;
 };
 
-InkExec.propTypes = {
+InkSpawn.propTypes = {
   /// spawn shell command
   command: PropTypes.string.isRequired,
+  /// spawn shell arguments
+  args: PropTypes.array,
   /// spawn options
   options: PropTypes.object,
   /// completion callback
@@ -39,4 +40,4 @@ InkExec.propTypes = {
   onError: PropTypes.func
 };
 
-module.exports = InkExec;
+export default InkSpawn;

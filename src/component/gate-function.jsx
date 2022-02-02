@@ -1,11 +1,14 @@
-const React = require("react");
-const PropTypes = require("prop-types");
+import React from "react";
+import PropTypes from "prop-types";
 
 const GateFunction = ({func, children, args = [], gateFalse = null}) => {
   const [result, setResult] = React.useState(null);
 
   React.useEffect(() => {
-    setResult(func.apply(null, args));
+    const mixed = func(...args);
+    if (mixed !== result) {
+      setResult(mixed);
+    }
   }, [func, args]);
 
   if (result === null) {
@@ -24,4 +27,4 @@ GateFunction.propTypes = {
   gateFalse: PropTypes.element
 };
 
-module.exports = GateFunction;
+export default GateFunction;

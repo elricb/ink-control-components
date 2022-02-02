@@ -1,18 +1,19 @@
-const React = require("react");
-const {Text, Box} = require("ink");
-const PropTypes = require("prop-types");
-const TextInput =
-  require("ink-text-input").default || require("ink-text-input");
+import React from "react";
+import {Text, Box} from "ink";
+import PropTypes from "prop-types";
+import TextInput from "ink-text-input";
 
 const getIsYN = input => {
   if (typeof input === "string") {
     if (input.toLowerCase() == "y") {
       return true;
     }
+
     if (input.toLowerCase() == "n") {
       return false;
     }
   }
+
   return null;
 };
 
@@ -48,4 +49,4 @@ InputYesNo.propTypes = {
   text: PropTypes.string.isRequired
 };
 
-module.exports = InputYesNo;
+export default InputYesNo;

@@ -1,7 +1,7 @@
 const React = require("react");
 const {render, Box, Text, useStdout, useStderr} = require("ink");
 
-const GateHttp = require("../component/GateHttp");
+const {GateHttp} = require("../cjs");
 
 const Example1 = () => {
   const [response, setResponse] = React.useState({});
