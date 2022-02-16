@@ -9,10 +9,13 @@ const GateBoolean = ({
   condition === null ? gateNull : condition === true ? children : gateFalse;
 
 GateBoolean.propTypes = {
+  // React child element: array, array of node, node, string
   children: PropTypes.any.isRequired,
+  /// need to set as isRequired when PropTypes support null
   condition: PropTypes.bool,
-  // I think these are the valid types: element, array, array of node, node, string
+  /// React child element
   gateNull: PropTypes.any,
+  /// React child element
   gateFalse: PropTypes.any
 };
 
