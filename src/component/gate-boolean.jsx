@@ -10,7 +10,7 @@ const GateBoolean = ({
 
 GateBoolean.propTypes = {
   children: PropTypes.any.isRequired,
-  condition: PropTypes.bool.isRequired,
+  condition: PropTypes.bool,
   // I think these are the valid types: element, array, array of node, node, string
   gateNull: PropTypes.any,
   gateFalse: PropTypes.any
