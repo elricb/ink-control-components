@@ -8,6 +8,7 @@ import GateBoolean from "./component/gate-boolean.jsx";
 import InkFunction from "./component/ink-function.jsx";
 import GateFunction from "./component/gate-function.jsx";
 import GateExec from "./component/gate-exec.jsx";
+import GateSpawn from "./component/gate-spawn.jsx";
 import inkExec from "./function/ink-exec.js";
 import inkSpawn from "./function/ink-spawn.js";
 import childProcessError from "./function/child-process-error.js";
@@ -23,6 +24,7 @@ export {
   InkFunction,
   GateFunction,
   GateExec,
+  GateSpawn,
   inkExec,
   inkSpawn,
   childProcessError

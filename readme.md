@@ -166,3 +166,68 @@ Type: `array`
 
 Args sent to function.
 
+### `<GateSpawn>`
+
+Standard node [child_process spawn](https://nodejs.org/api/child_process.html#child_processspawncommand-args-options) as a Gate Component.
+
+```jsx
+import {render, Text} from "ink";
+import {GateSpawn} from "ink-control-components";
+
+const Example = () => (
+  <GateSpawn
+    command="sh"
+    args={["/home/user/file.sh"]}
+    options{{cwd: "/home/user"}}
+    gateNull={<Text>Loading...</Text>}
+    gateFalse={<Text>Failed</Text>}
+  >
+    <Text>Success</Text>
+  </GateSpawn>
+);
+
+render(<Example />);
+```
+
+#### gateNull
+
+Type: `element`
+
+Alternate component to display while running.
+
+#### gateFalse
+
+Type: `element`
+
+Alternate component to display if condition is false.
+
+#### command
+
+Type: `String`
+
+The command to run.
+
+#### args
+
+Type: `array`
+
+List of string arguments.
+
+#### options
+
+Type: `Object`
+
+Config object, see [spawn](https://nodejs.org/api/child_process.html#child_processspawncommand-args-options) for options.
+
+#### onError
+
+Type: `function`
+
+Callback function with `Error` parameter.
+
+#### onDone
+
+Type: `function`
+
+Callback function with `int code` parameter.
+
