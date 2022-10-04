@@ -1,21 +1,17 @@
-import json from "@rollup/plugin-json";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
-import {terser} from "rollup-plugin-terser";
-import peerDepsExternal from "rollup-plugin-peer-deps-external";
-import {babel} from "@rollup/plugin-babel";
-import packageJson from "./package.json";
+import external from "rollup-plugin-peer-deps-external";
 
-const MINIFY = true;
+const packageJson = require("./package.json");
 
-const rollupConfig = {
+export default {
   input: "src/index.js",
   output: [
     {
       file: packageJson.main,
       format: "cjs",
-      exports: "named",
       sourcemap: true,
+      name: "react-lib",
       strict: false
     },
     {
@@ -24,21 +20,6 @@ const rollupConfig = {
       sourcemap: true
     }
   ],
-  plugins: [
-    peerDepsExternal(),
-    json(),
-    resolve(),
-    commonjs({transformMixedEsModules: true}),
-    babel({
-      exclude: "node_modules/**",
-      babelHelpers: "bundled"
-    })
-  ],
-  external: ["react", "prop-types", "ink"]
+  plugins: [external(), resolve(), commonjs()],
+  external: Object.keys(packageJson.peerDependencies || [])
 };
-
-if (MINIFY === true) {
-  rollupConfig.plugins.push(terser());
-}
-
-export default rollupConfig;

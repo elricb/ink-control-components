@@ -1,11 +1,11 @@
 {
-  "name": "@elricb/ink-control-components",
-  "version": "1.1.0",
-  "description": "Decision components for Ink",
+  "name": "@elricb/ink-promise",
+  "version": "0.0.1",
+  "description": "Promise components for Ink",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/elricb/ink-control-components.git"
+    "url": "git+https://github.com/elricb/ink-promise.git"
   },
   "author": "elricb (github.com/elricb)",
   "main": "dist/cjs/index.js",
@@ -14,13 +14,10 @@
     "node": ">=12"
   },
   "scripts": {
-    "build": "rollup -c && npx babel src/example --out-dir dist/example",
+    "build": "rollup -c",
     "start": "rollup -c -w",
-    "release": "npm run build && npm run lint && npm test && npm publish --access public",
-    "example": "node dist/example/control.js && node dist/example/http.js",
-    "lint": "xo",
-    "test": "ava",
-    "test-update-snapshots": "ava --update-snapshots"
+    "publish": "npm run build && npm run lint && npm test && npm publish --access public",
+    "lint": "xo"
   },
   "files": [
     "dist"
@@ -32,7 +29,8 @@
     "ink",
     "component",
     "jsx",
-    "react"
+    "react",
+    "promise"
   ],
   "prettier": "@elricb/prettier-config",
   "eslintConfig": {
@@ -40,61 +38,30 @@
       "plugin:react/recommended"
     ]
   },
-  "ava": {
-    "babel": {
-      "testOptions": {
-        "presets": [
-          "@babel/preset-react"
-        ]
-      }
-    }
-  },
-  "babelpresets": [
-    "@ava/babel/stage-4",
-    "@babel/preset-react"
-  ],
-  "babel": {
-    "plugins": [
-      "@babel/plugin-transform-react-jsx"
-    ]
-  },
   "bugs": {
     "url": "https://github.com/elricb/ink-control-components/issues"
   },
   "homepage": "https://github.com/elricb/ink-control-components#readme",
   "devDependencies": {
-    "@ava/babel": "^2.0",
-    "@babel/cli": "^7.16.8",
-    "@babel/core": "^7.16.12",
-    "@babel/plugin-transform-react-jsx": "^7.16.7",
-    "@babel/preset-env": "^7.16.11",
-    "@babel/preset-react": "^7.16.7",
     "@elricb/prettier-config": "0.0.1",
-    "@elricb/xo-config": "^0.0.7",
-    "@rollup/plugin-babel": "^5.3.0",
-    "@rollup/plugin-commonjs": "^21.0.1",
+    "@elricb/xo-config": "file:../xo-config",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^21.0.2",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.1.3",
-    "ava": "^4.0.1",
-    "eslint-config-xo-react": "^0.26.0",
-    "eslint-plugin-react": "^7.28.0",
-    "eslint-plugin-react-hooks": "^4.3.0",
-    "husky": "^7.0.4",
-    "ink-testing-library": "^2.0.0",
-    "ink-use-stdout-dimensions": "^1.0.5",
-    "prettier": "^2.5.1",
-    "pretty-quick": "^3.1.3",
-    "rollup": "^2.66.1",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-terser": "^7.0.2",
-    "xo": "^0.47.0"
+    "@rollup/plugin-typescript": "^8.3.1",
+    "acorn-jsx": "^5.3.2",
+    "ink": "^3.2.0",
+    "prop-types": "^15.8.1",
+    "react": "^17.0.2",
+    "rollup": "^2.70.1",
+    "rollup-plugin-filesize": "^9.1.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4"
   },
   "peerDependencies": {
     "ink": ">=3",
     "prop-types": ">=14",
-    "react": ">=16"
+    "react": ">=16.8.0"
   },
-  "dependencies": {
-    "ink-text-input": "^4.0.2"
-  }
+  "dependencies": {}
 }

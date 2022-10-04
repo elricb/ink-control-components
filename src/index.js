@@ -1,31 +1,13 @@
-import InkExec from "./component/ink-exec.jsx";
-import InkSpawn from "./component/ink-spawn.jsx";
-import GateHttp from "./component/gate-http.jsx";
-import GateYesNo from "./component/gate-yes-no.jsx";
-import GateExists from "./component/gate-exists.jsx";
-import InputYesNo from "./component/input-yes-no.jsx";
-import GateBoolean from "./component/gate-boolean.jsx";
-import InkFunction from "./component/ink-function.jsx";
-import GateFunction from "./component/gate-function.jsx";
-import GateExec from "./component/gate-exec.jsx";
-import GateSpawn from "./component/gate-spawn.jsx";
-import inkExec from "./function/ink-exec.js";
-import inkSpawn from "./function/ink-spawn.js";
-import childProcessError from "./function/child-process-error.js";
+import useInkPromise from "./hook/use-ink-promise";
+import InkPromise from "./component/ink-promise";
+import InkPromiseFunction from "./component/ink-promise-function";
+import InkPromiseSynchronous from "./component/ink-promise-synchronous";
+import InkPromiseAsynchronous from "./component/ink-promise-asynchronous";
 
 export {
-  InkExec,
-  InkSpawn,
-  GateHttp,
-  GateYesNo,
-  GateExists,
-  InputYesNo,
-  GateBoolean,
-  InkFunction,
-  GateFunction,
-  GateExec,
-  GateSpawn,
-  inkExec,
-  inkSpawn,
-  childProcessError
+  useInkPromise,
+  InkPromise,
+  InkPromiseFunction,
+  InkPromiseSynchronous,
+  InkPromiseAsynchronous
 };
